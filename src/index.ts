@@ -22,6 +22,7 @@ app.get("/user/:email", async (req: Request, res: Response) => {
         console.log("user successfully retrieved from API");
         redis.set(email, JSON.stringify(user), "EX", 3600);
         return res.status(200).json({ user: user });
+        //Added comment
       }
     });
   } catch (error) {
